@@ -13,6 +13,4 @@ if __name__ == "__main__":
     # server = Server(args.host, args.port)
     print("test")
     backend = Backend(localaddr=("localhost", 1234))
-    while True:
-        backend.Pump()
-        sleep(0.0001)
+    backend.run()
