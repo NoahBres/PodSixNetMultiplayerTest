@@ -18,9 +18,28 @@
       "type": "python",
       "request": "launch",
       "module": "client",
-      "console": "externalTerminal",
+      "console": "integratedTerminal",
       "env": { "PYTHONPATH": "${workspaceRoot}/PodSixMultiplayerTest" },
       "args": ["--host", "127.0.0.1", "--port", "1234"]
+    },
+    {
+      "name": "Client 2",
+      "type": "python",
+      "request": "launch",
+      "module": "client",
+      "console": "integratedTerminal",
+      "env": { "PYTHONPATH": "${workspaceRoot}/PodSixMultiplayerTest" },
+      "args": ["--host", "127.0.0.1", "--port", "1234"]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Server/Client",
+      "configurations": ["Server", "Client"]
+    },
+    {
+      "name": "Server/Client/Client",
+      "configurations": ["Server", "Client", "Client 2"]
     }
   ]
 }
